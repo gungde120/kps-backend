@@ -15,7 +15,8 @@ module.exports = app => {
     var router = require("express").Router();
     var key = [authJwt.verifyToken];
 
-    router.post('/', key, upload.single('thumbnail'), DasController.createDas);
+    // router.post('/', key, upload.single('thumbnail'), DasController.createDas);
+    router.post('/', key, DasController.createDas);
     router.get('/', DasController.getAllDas);
     router.get('/null', DasController.getAllNullDas);
     router.get('/:id', DasController.getDas);

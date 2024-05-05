@@ -2,35 +2,35 @@ const pool = require("./db.js");
 const multer = require("multer");
 const path = require("path");
 
-function dataDas(data, file) {
-  data.das_name = data.das_name;
-  data.sungai_id = data.sungai_id ? data.sungai_id : null;
-  data.kecamatan_id = data.kecamatan_id ? data.kecamatan_id : null;
-  data.user_id = data.user_id;
-  data.alamat = data.alamat;
-  data.luas_das = data.luas_das;
-  data.latitude = data.latitude;
-  data.longitude = data.longitude;
-  data.deskripsi = data.deskripsi;
-  if (file) {
-    data.thumbnail = file.filename;
-  } else {
-    data.thumbnail = data.thumbnail;
-  }
-  data.maps_url = data.maps_url;
-  return data;
-}
+// function dataDas(data, file) {
+//   data.das_name = data.das_name;
+//   data.sungai_id = data.sungai_id ? data.sungai_id : null;
+//   data.kecamatan_id = data.kecamatan_id ? data.kecamatan_id : null;
+//   data.user_id = data.user_id;
+//   data.alamat = data.alamat;
+//   data.luas_das = data.luas_das;
+//   data.latitude = data.latitude;
+//   data.longitude = data.longitude;
+//   data.deskripsi = data.deskripsi;
+//   if (file) {
+//     data.thumbnail = file.filename;
+//   } else {
+//     data.thumbnail = data.thumbnail;
+//   }
+//   data.maps_url = data.maps_url;
+//   return data;
+// }
 
-const storage = multer.diskStorage({
-  destination: path.join(
-    __dirname + "./public/images/das/"
-  ),
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + "-" + file.originalname);
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: path.join(
+//     __dirname + "./public/images/das/"
+//   ),
+//   filename: function (req, file, cb) {
+//     cb(null, file.fieldname + "-" + file.originalname);
+//   },
+// });
 
-const upload = multer({ storage });
+// const upload = multer({ storage });
 
 const promiseQuery = (text, params) => {
   return new Promise((resolve, reject) => {

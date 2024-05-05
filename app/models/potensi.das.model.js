@@ -88,4 +88,5 @@ const PotensiDas = {
   },
 };
 
-module.exports = { dataPotensiDas, PotensiDas, upload };
+// module.exports = { dataPotensiDas, PotensiDas, upload };
+module.exports = { dataPotensiDas, PotensiDas };

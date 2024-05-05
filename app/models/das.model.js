@@ -106,4 +106,5 @@ const Das = {
   },
 };
 
-module.exports = { dataDas, Das, upload };
+// module.exports = { dataDas, Das, upload };
+module.exports = { dataDas, Das };

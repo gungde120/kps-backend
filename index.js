@@ -10,8 +10,8 @@ const { METHODS } = require("http");
 const app = express();
 
 var corsOptions = {
-  origin: process.env.ORIGIN,
-  methods: ["GET", "POST", "PUT", "DELETE"]
+  origin: process.env.ORIGIN
+  // methods: ["GET", "POST", "PUT", "DELETE"]
 };
 
 app.use(cors(corsOptions));

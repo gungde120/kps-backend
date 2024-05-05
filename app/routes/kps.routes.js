@@ -14,7 +14,8 @@ module.exports = app => {
     var router = require("express").Router();
     var key = [authJwt.verifyToken];
 
-    router.post('/', key, upload.single('logo_kps'), KpsController.createKps);
+    router.post('/', key, KpsController.createKps);
+    // router.post('/', key, upload.single('logo_kps'), KpsController.createKps);
     router.get('/', KpsController.getAllKps);
     router.get('/:id', KpsController.getKps);
     router.get('/id/:id', KpsController.getKpsById);

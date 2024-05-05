@@ -1,5 +1,6 @@
 const { authJwt } = require("../middleware");
-const { Das, upload } = require('../models/das.model');
+const { Das } = require('../models/das.model');
+// const { Das, upload } = require('../models/das.model');
 const DasController = require('../controllers/das.controller');
 
 module.exports = app => {

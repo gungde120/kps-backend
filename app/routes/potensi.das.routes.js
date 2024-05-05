@@ -1,5 +1,6 @@
 const { authJwt } = require("../middleware");
-const { PotensiDas, upload } = require('../models/potensi.das.model');
+const { PotensiDas } = require('../models/potensi.das.model');
+// const { PotensiDas, upload } = require('../models/potensi.das.model');
 const PotensiDasController = require('../controllers/potensi.das.controller');
 
 module.exports = app => {
@@ -18,7 +19,8 @@ module.exports = app => {
     router.get('/', PotensiDasController.getAllPotensiDas);
     router.get('/:id', PotensiDasController.getPotensiDas);
     router.get('/id/:id', PotensiDasController.getPotensiDasById);
-    router.put('/:id', key, upload.single('thumbnail'), PotensiDasController.updatePotensiDas);
+    router.put('/:id', key, PotensiDasController.updatePotensiDas);
+    // router.put('/:id', key, upload.single('thumbnail'), PotensiDasController.updatePotensiDas);
     router.delete('/:id', key, PotensiDasController.deletePotensiDas);
 
     app.use('/api/potensi-das', router);

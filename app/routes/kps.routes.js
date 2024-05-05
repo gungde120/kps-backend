@@ -1,5 +1,5 @@
 const { authJwt } = require("../middleware");
-const { upload } = require('../models/kps.model');
+// const { upload } = require('../models/kps.model');
 const KpsController = require('../controllers/kps.controller');
 
 module.exports = app => {
@@ -18,7 +18,8 @@ module.exports = app => {
     router.get('/', KpsController.getAllKps);
     router.get('/:id', KpsController.getKps);
     router.get('/id/:id', KpsController.getKpsById);
-    router.put('/:id', key, upload.single('logo_kps'), KpsController.updateKps);
+    // router.put('/:id', key, upload.single('logo_kps'), KpsController.updateKps);
+    router.put('/:id', key, KpsController.updateKps);
     router.delete('/:id', key, KpsController.deleteKps);
 
     app.use('/api/kps', router);

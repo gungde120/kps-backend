@@ -21,16 +21,16 @@ function dataDas(data, file) {
   return data;
 }
 
-const storage = multer.diskStorage({
-  destination: path.join(
-    __dirname + "./public/images/das/"
-  ),
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + "-" + file.originalname);
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: path.join(
+//     __dirname + "./public/images/das/"
+//   ),
+//   filename: function (req, file, cb) {
+//     cb(null, file.fieldname + "-" + file.originalname);
+//   },
+// });
 
-const upload = multer({ storage });
+// const upload = multer({ storage });
 
 const promiseQuery = (text, params) => {
   return new Promise((resolve, reject) => {

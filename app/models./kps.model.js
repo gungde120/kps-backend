@@ -104,4 +104,5 @@ const Kps = {
   },
 };
 
-module.exports = { dataKps, Kps, upload };
+// module.exports = { dataKps, Kps, upload };
+module.exports = { dataKps, Kps };

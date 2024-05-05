@@ -15,7 +15,8 @@ module.exports = app => {
     var router = require("express").Router();
     var key = [authJwt.verifyToken];
 
-    router.post('/', key, upload.single('thumbnail'), PotensiDasController.createPotensiDas);
+    // router.post('/', key, upload.single('thumbnail'), PotensiDasController.createPotensiDas);
+    router.post('/', key, PotensiDasController.createPotensiDas);
     router.get('/', PotensiDasController.getAllPotensiDas);
     router.get('/:id', PotensiDasController.getPotensiDas);
     router.get('/id/:id', PotensiDasController.getPotensiDasById);

@@ -19,7 +19,8 @@ module.exports = app => {
     router.get('/', DasController.getAllDas);
     router.get('/null', DasController.getAllNullDas);
     router.get('/:id', DasController.getDas);
-    router.put('/:id', key, upload.single('thumbnail'), DasController.updateDas);
+    router.put('/:id', key, DasController.updateDas);
+    // router.put('/:id', key, upload.single('thumbnail'), DasController.updateDas);
     router.delete('/:id', key, DasController.deleteDas);
 
     app.use('/api/das', router);

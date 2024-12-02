@@ -1,4 +1,4 @@
-const { Pool } = require("pg");
+const { Pool } = require("mysql");
 require("dotenv").config();
 
 const pool = new Pool({

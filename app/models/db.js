@@ -1,24 +1,19 @@
-const mysql = require("mysql");
+const { Pool } = require("pg");
 require("dotenv").config();
 
-const pool = mysql.createPool({
-  connectionLimit: 10, // Set the maximum number of connections
-  host: process.env.MYSQL_HOST,
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  database: process.env.MYSQL_DATABASE,
-  port: process.env.MYSQL_PORT,
+const pool = new Pool({
+  user: process.env.PG_USER,
+  host: process.env.PG_HOST,
+  database: process.env.PG_DATABASE,
+  password: process.env.PG_PASSWORD,
+  port: process.env.PG_PORT,
 });
 
-pool.getConnection((err, connection) => {
+pool.connect((err, client, release) => {
   if (err) {
-    return console.error("Error acquiring connection", err.stack);
+    return console.error("Error acquiring client", err.stack);
   }
-  console.log("Connected to MySQL database");
-
-  // Release the connection back to the pool
-  connection.release();
+  console.log("Connected to PostgreSQL database");
 });
 
 module.exports = pool;
-
